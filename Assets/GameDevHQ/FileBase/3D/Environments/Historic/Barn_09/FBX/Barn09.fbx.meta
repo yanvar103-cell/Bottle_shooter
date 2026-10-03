@@ -1,0 +1,187 @@
+fileFormatVersion: 2
+guid: 8353ffd2cc8634d30a6d8a7ac23642b9
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: CINEMA_4D_Editor
+    100004: Plane
+    100006: Plane_044
+    100008: Plane_045
+    100010: Plane_050
+    100012: Plane_052
+    100014: Plane_053
+    100016: Plane_054
+    100018: Plane_056
+    100020: Plane_057
+    100022: Plane_058
+    100024: Plane_059
+    100026: Plane_065
+    100028: Plane_066
+    400000: //RootNode
+    400002: CINEMA_4D_Editor
+    400004: Plane
+    400006: Plane_044
+    400008: Plane_045
+    400010: Plane_050
+    400012: Plane_052
+    400014: Plane_053
+    400016: Plane_054
+    400018: Plane_056
+    400020: Plane_057
+    400022: Plane_058
+    400024: Plane_059
+    400026: Plane_065
+    400028: Plane_066
+    2000000: CINEMA_4D_Editor
+    2100000: Barn09_Details
+    2100002: Barn09
+    2100004: Barn09_Glass
+    2100006: Barn09_Floor
+    2300000: Plane
+    2300002: Plane_044
+    2300004: Plane_045
+    2300006: Plane_050
+    2300008: Plane_052
+    2300010: Plane_053
+    2300012: Plane_054
+    2300014: Plane_056
+    2300016: Plane_057
+    2300018: Plane_058
+    2300020: Plane_059
+    2300022: Plane_065
+    2300024: Plane_066
+    2300026: //RootNode
+    3300000: Plane
+    3300002: Plane_044
+    3300004: Plane_045
+    3300006: Plane_050
+    3300008: Plane_052
+    3300010: Plane_053
+    3300012: Plane_054
+    3300014: Plane_056
+    3300016: Plane_057
+    3300018: Plane_058
+    3300020: Plane_059
+    3300022: Plane_065
+    3300024: Plane_066
+    3300026: //RootNode
+    4300000: Plane
+    4300002: Plane_044
+    4300004: Plane_050
+    4300006: Plane_045
+    4300008: Plane_052
+    4300010: Plane_053
+    4300012: Plane_054
+    4300014: Plane_056
+    4300016: Plane_057
+    4300018: Plane_058
+    4300020: Plane_059
+    4300022: Plane_066
+    4300024: Plane_065
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Barn09
+    second: {fileID: 2100000, guid: 4209b28a091674b21b4fc251e446c5be, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Barn09_Details
+    second: {fileID: 2100000, guid: b08eda893ccc645078a7dd807e994a3c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Barn09_Floor
+    second: {fileID: 2100000, guid: 5c8e01e491d49495eaa3ba5a9b6196bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Barn09_Glass
+    second: {fileID: 2100000, guid: 46c44751bc74b4fd8800aadb1104eeb2, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

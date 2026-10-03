@@ -1,0 +1,226 @@
+fileFormatVersion: 2
+guid: 2724f1991ee5d9146946b1fc59f5dc89
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cement_Bag_1
+    100004: Cement_Bag_10
+    100006: Cement_Bag_11
+    100008: Cement_Bag_12
+    100010: Cement_Bag_13
+    100012: Cement_Bag_14
+    100014: Cement_Bag_15
+    100016: Cement_Bag_16
+    100018: Cement_Bag_17
+    100020: Cement_Bag_18
+    100022: Cement_Bag_19
+    100024: Cement_Bag_2
+    100026: Cement_Bag_20
+    100028: Cement_Bag_21
+    100030: Cement_Bag_22
+    100032: Cement_Bag_23
+    100034: Cement_Bag_24
+    100036: Cement_Bag_3
+    100038: Cement_Bag_4
+    100040: Cement_Bag_5
+    100042: Cement_Bag_6
+    100044: Cement_Bag_7
+    100046: Cement_Bag_8
+    100048: Cement_Bag_9
+    100050: Cement_Bags
+    100052: Pallet
+    400000: //RootNode
+    400002: Cement_Bag_1
+    400004: Cement_Bag_10
+    400006: Cement_Bag_11
+    400008: Cement_Bag_12
+    400010: Cement_Bag_13
+    400012: Cement_Bag_14
+    400014: Cement_Bag_15
+    400016: Cement_Bag_16
+    400018: Cement_Bag_17
+    400020: Cement_Bag_18
+    400022: Cement_Bag_19
+    400024: Cement_Bag_2
+    400026: Cement_Bag_20
+    400028: Cement_Bag_21
+    400030: Cement_Bag_22
+    400032: Cement_Bag_23
+    400034: Cement_Bag_24
+    400036: Cement_Bag_3
+    400038: Cement_Bag_4
+    400040: Cement_Bag_5
+    400042: Cement_Bag_6
+    400044: Cement_Bag_7
+    400046: Cement_Bag_8
+    400048: Cement_Bag_9
+    400050: Cement_Bags
+    400052: Pallet
+    2300000: Cement_Bag_1
+    2300002: Cement_Bag_10
+    2300004: Cement_Bag_11
+    2300006: Cement_Bag_12
+    2300008: Cement_Bag_13
+    2300010: Cement_Bag_14
+    2300012: Cement_Bag_15
+    2300014: Cement_Bag_16
+    2300016: Cement_Bag_17
+    2300018: Cement_Bag_18
+    2300020: Cement_Bag_19
+    2300022: Cement_Bag_2
+    2300024: Cement_Bag_20
+    2300026: Cement_Bag_21
+    2300028: Cement_Bag_22
+    2300030: Cement_Bag_23
+    2300032: Cement_Bag_24
+    2300034: Cement_Bag_3
+    2300036: Cement_Bag_4
+    2300038: Cement_Bag_5
+    2300040: Cement_Bag_6
+    2300042: Cement_Bag_7
+    2300044: Cement_Bag_8
+    2300046: Cement_Bag_9
+    2300048: Pallet
+    3300000: Cement_Bag_1
+    3300002: Cement_Bag_10
+    3300004: Cement_Bag_11
+    3300006: Cement_Bag_12
+    3300008: Cement_Bag_13
+    3300010: Cement_Bag_14
+    3300012: Cement_Bag_15
+    3300014: Cement_Bag_16
+    3300016: Cement_Bag_17
+    3300018: Cement_Bag_18
+    3300020: Cement_Bag_19
+    3300022: Cement_Bag_2
+    3300024: Cement_Bag_20
+    3300026: Cement_Bag_21
+    3300028: Cement_Bag_22
+    3300030: Cement_Bag_23
+    3300032: Cement_Bag_24
+    3300034: Cement_Bag_3
+    3300036: Cement_Bag_4
+    3300038: Cement_Bag_5
+    3300040: Cement_Bag_6
+    3300042: Cement_Bag_7
+    3300044: Cement_Bag_8
+    3300046: Cement_Bag_9
+    3300048: Pallet
+    4300000: Pallet
+    4300002: Cement_Bag_1
+    4300004: Cement_Bag_2
+    4300006: Cement_Bag_3
+    4300008: Cement_Bag_4
+    4300010: Cement_Bag_5
+    4300012: Cement_Bag_6
+    4300014: Cement_Bag_7
+    4300016: Cement_Bag_8
+    4300018: Cement_Bag_9
+    4300020: Cement_Bag_10
+    4300022: Cement_Bag_11
+    4300024: Cement_Bag_12
+    4300026: Cement_Bag_13
+    4300028: Cement_Bag_14
+    4300030: Cement_Bag_15
+    4300032: Cement_Bag_16
+    4300034: Cement_Bag_17
+    4300036: Cement_Bag_18
+    4300038: Cement_Bag_19
+    4300040: Cement_Bag_20
+    4300042: Cement_Bag_21
+    4300044: Cement_Bag_22
+    4300046: Cement_Bag_23
+    4300048: Cement_Bag_24
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Construction_Site_Pack_4_Mat
+    second: {fileID: 2100000, guid: a26d603dbdef8c145afae46839d76120, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
