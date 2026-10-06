@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SimulatedPhysics : MonoBehaviour
 {
+    public static SimulatedPhysics Instance { get; private set; }
+
     [SerializeField] private Transform _environment;
     [SerializeField] private LineRenderer _line;
     [SerializeField] private int _maxPhysicsIterations = 100;
@@ -13,9 +15,14 @@ public class SimulatedPhysics : MonoBehaviour
     private Scene _simulatedScene;
     private PhysicsScene _physicsScene;
 
+    //ghosts that must follow their real object (movable props)
+    private readonly List<(Transform real, Rigidbody ghostRb, GameObject ghost)> _dynamicGhosts = new();
+
     //Awake (not Start) so the scene exists before BottleSpawner.Start adds bottles to it
     private void Awake()
     {
+        Instance = this;
+
         _simulatedScene = SceneManager.CreateScene("SimulatedPhysics",
             new CreateSceneParameters(LocalPhysicsMode.Physics3D));
         _physicsScene = _simulatedScene.GetPhysicsScene();
@@ -47,8 +54,44 @@ public class SimulatedPhysics : MonoBehaviour
         return ghost;
     }
 
+    //same as AddGhost, but the ghost is moved to match the real object before every prediction
+    public GameObject AddDynamicGhost(GameObject original)
+    {
+        var ghost = AddGhost(original);
+        _dynamicGhosts.Add((original.transform, ghost.GetComponent<Rigidbody>(), ghost));
+        return ghost;
+    }
+
+    private void SyncDynamicGhosts()
+    {
+        for (int i = _dynamicGhosts.Count - 1; i >= 0; i--)
+        {
+            var (real, ghostRb, ghost) = _dynamicGhosts[i];
+
+            // real object destroyed, or ghost removed (e.g. bottle was shot) -> forget it
+            if (real == null || ghost == null)
+            {
+                if (ghost != null) Destroy(ghost);
+                _dynamicGhosts.RemoveAt(i);
+                continue;
+            }
+
+            if (ghostRb != null)
+            {
+                ghostRb.position = real.position;   // teleports the kinematic ghost inside the physics scene
+                ghostRb.rotation = real.rotation;
+            }
+            else
+            {
+                ghost.transform.SetPositionAndRotation(real.position, real.rotation);
+            }
+        }
+    }
+
     public void SimulateTrajectory(Ball ballPrefab, Vector3 position, Vector3 velocity)
     {
+        SyncDynamicGhosts();
+
         var ghostBall = Instantiate(ballPrefab, position, Quaternion.identity);
         foreach (var r in ghostBall.GetComponentsInChildren<Renderer>(true))
             r.enabled = false;

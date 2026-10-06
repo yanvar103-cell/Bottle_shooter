@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [SerializeField] private float _timeLimit = 60f;
+    [SerializeField] private float _startMessageDuration = 3f;
     [SerializeField, Range(0f, 1f)] private float _requiredPercent = 0.75f;
     [SerializeField] private Launcher _launcher;
     [SerializeField] private LineRenderer _trajectoryLine;
@@ -34,10 +35,10 @@ public class GameManager : MonoBehaviour
         _requiredBottles = Mathf.CeilToInt(_totalBottles * _requiredPercent);
         _shotBottles = 0;
         _timeLeft = _timeLimit;
-        _isRunning = true;
+        _isRunning = false;          // timer waits until the intro is over
 
-        if (_resultText != null) _resultText.text = "";
-        UpdateUI();
+        UpdateUI();                  // shows full time (60) and 0 / total
+        StartCoroutine(IntroRoutine());
     }
 
     public void BottleShot()
@@ -77,9 +78,9 @@ public class GameManager : MonoBehaviour
 
         string message;
         if (won)
-            message = $"You win! Bottles: {_shotBottles}/{_totalBottles} (needed: {_requiredBottles})";
+            message = $"You win!\nBottles: {_shotBottles}/{_totalBottles} (needed: {_requiredBottles})";
         else
-            message = $"Time's up! You lose. Bottles: {_shotBottles}/{_totalBottles} (needed: {_requiredBottles})";
+            message = $"Time's up! You lose.\nBottles: {_shotBottles}/{_totalBottles} (needed: {_requiredBottles})";
         
         if (_resultText != null) _resultText.text = message;
     }
@@ -87,6 +88,25 @@ public class GameManager : MonoBehaviour
     private void UpdateUI()
     {
         if (_timerText != null) _timerText.text = $"Time: {Mathf.CeilToInt(_timeLeft)}";
-        if (_scoreText != null) _scoreText.text = $"Bottles: {_shotBottles} / {_requiredBottles}";
+        if (_scoreText != null) _scoreText.text = $"Bottles: {_shotBottles} / {_totalBottles}";
+    }
+
+    private IEnumerator IntroRoutine()
+    {
+        //block aiming and shooting during the intro
+        _launcher.enabled = false;
+        _trajectoryLine.enabled = false;
+
+        if (_resultText != null)
+            _resultText.text = $"Shoot at least {Mathf.RoundToInt(_requiredPercent * 100f)}% of total bottles\nin time remaining to win!";
+
+        yield return new WaitForSeconds(_startMessageDuration);
+
+        if (_resultText != null) _resultText.text = "";
+
+        //start the game
+        _launcher.enabled = true;
+        _trajectoryLine.enabled = true;
+        _isRunning = true;
     }
 }
