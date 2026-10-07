@@ -53,6 +53,24 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Look"",
+                    ""type"": ""Value"",
+                    ""id"": ""82a63204-ec2d-43ff-a86c-9986de6f0c16"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Precision"",
+                    ""type"": ""Button"",
+                    ""id"": ""bec06f72-08ea-4b57-9b2e-37602299aa4c"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -60,6 +78,17 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""2d0de28e-0958-4930-a591-9adc5f4e7fad"",
                     ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""771d8214-8306-45bf-8062-3879871fef80"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -209,6 +238,28 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Force"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e8e7754b-e176-497f-8021-d037f09b459a"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Look"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""99ec4ea3-8e1e-4775-9087-b852b9c02931"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Precision"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -220,6 +271,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         m_Launcher_Shoot = m_Launcher.FindAction("Shoot", throwIfNotFound: true);
         m_Launcher_Rotation = m_Launcher.FindAction("Rotation", throwIfNotFound: true);
         m_Launcher_Force = m_Launcher.FindAction("Force", throwIfNotFound: true);
+        m_Launcher_Look = m_Launcher.FindAction("Look", throwIfNotFound: true);
+        m_Launcher_Precision = m_Launcher.FindAction("Precision", throwIfNotFound: true);
     }
 
     ~@InputActions()
@@ -289,6 +342,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Launcher_Shoot;
     private readonly InputAction m_Launcher_Rotation;
     private readonly InputAction m_Launcher_Force;
+    private readonly InputAction m_Launcher_Look;
+    private readonly InputAction m_Launcher_Precision;
     public struct LauncherActions
     {
         private @InputActions m_Wrapper;
@@ -296,6 +351,8 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         public InputAction @Shoot => m_Wrapper.m_Launcher_Shoot;
         public InputAction @Rotation => m_Wrapper.m_Launcher_Rotation;
         public InputAction @Force => m_Wrapper.m_Launcher_Force;
+        public InputAction @Look => m_Wrapper.m_Launcher_Look;
+        public InputAction @Precision => m_Wrapper.m_Launcher_Precision;
         public InputActionMap Get() { return m_Wrapper.m_Launcher; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -314,6 +371,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Force.started += instance.OnForce;
             @Force.performed += instance.OnForce;
             @Force.canceled += instance.OnForce;
+            @Look.started += instance.OnLook;
+            @Look.performed += instance.OnLook;
+            @Look.canceled += instance.OnLook;
+            @Precision.started += instance.OnPrecision;
+            @Precision.performed += instance.OnPrecision;
+            @Precision.canceled += instance.OnPrecision;
         }
 
         private void UnregisterCallbacks(ILauncherActions instance)
@@ -327,6 +390,12 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
             @Force.started -= instance.OnForce;
             @Force.performed -= instance.OnForce;
             @Force.canceled -= instance.OnForce;
+            @Look.started -= instance.OnLook;
+            @Look.performed -= instance.OnLook;
+            @Look.canceled -= instance.OnLook;
+            @Precision.started -= instance.OnPrecision;
+            @Precision.performed -= instance.OnPrecision;
+            @Precision.canceled -= instance.OnPrecision;
         }
 
         public void RemoveCallbacks(ILauncherActions instance)
@@ -349,5 +418,7 @@ public partial class @InputActions: IInputActionCollection2, IDisposable
         void OnShoot(InputAction.CallbackContext context);
         void OnRotation(InputAction.CallbackContext context);
         void OnForce(InputAction.CallbackContext context);
+        void OnLook(InputAction.CallbackContext context);
+        void OnPrecision(InputAction.CallbackContext context);
     }
 }

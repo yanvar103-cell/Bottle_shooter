@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text _timerText;
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private TMP_Text _resultText;
+    [SerializeField] private GameObject _restartButton;
 
     private int _totalBottles;
     private int _shotBottles;
@@ -37,6 +39,8 @@ public class GameManager : MonoBehaviour
         _timeLeft = _timeLimit;
         _isRunning = false;          // timer waits until the intro is over
 
+        if (_restartButton != null) _restartButton.SetActive(false);
+
         UpdateUI();                  // shows full time (60) and 0 / total
         StartCoroutine(IntroRoutine());
     }
@@ -50,6 +54,12 @@ public class GameManager : MonoBehaviour
 
         if (_shotBottles >= _requiredBottles)
             EndGame(true);
+    }
+
+    //Hook this to the Restart button's OnClick
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void Update()
@@ -83,6 +93,7 @@ public class GameManager : MonoBehaviour
             message = $"Time's up! You lose.\nBottles: {_shotBottles}/{_totalBottles} (needed: {_requiredBottles})";
         
         if (_resultText != null) _resultText.text = message;
+        if (_restartButton != null) _restartButton.SetActive(true);
     }
 
     private void UpdateUI()

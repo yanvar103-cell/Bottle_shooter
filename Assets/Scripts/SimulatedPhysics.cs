@@ -23,7 +23,8 @@ public class SimulatedPhysics : MonoBehaviour
     {
         Instance = this;
 
-        _simulatedScene = SceneManager.CreateScene("SimulatedPhysics",
+        // unique name, so a restart can never collide with the previous simulated scene
+        _simulatedScene = SceneManager.CreateScene($"SimulatedPhysics_{GetInstanceID()}",
             new CreateSceneParameters(LocalPhysicsMode.Physics3D));
         _physicsScene = _simulatedScene.GetPhysicsScene();
 
@@ -43,6 +44,9 @@ public class SimulatedPhysics : MonoBehaviour
         //remove gameplay scripts (e.g. Bottle) so ghosts never count hits or call the GameManager
         foreach (var mb in ghost.GetComponentsInChildren<MonoBehaviour>(true))
             DestroyImmediate(mb);
+
+        foreach (var joint in ghost.GetComponentsInChildren<Joint>(true))
+            DestroyImmediate(joint);
 
         foreach (var r in ghost.GetComponentsInChildren<Renderer>(true))//The true also catches children that are currently inactive
             r.enabled = false;
