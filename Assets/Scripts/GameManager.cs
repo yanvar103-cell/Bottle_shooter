@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
         _trajectoryLine.enabled = false;
 
         if (_resultText != null)
-            _resultText.text = $"Shoot at least {Mathf.RoundToInt(_requiredPercent * 100f)}% of total bottles\nin time remaining to win!";
+            _resultText.text = $"Shoot at least {Mathf.RoundToInt(_requiredPercent * 100f)}% of total bottles\nin time remaining to win!\nincrease/decrease force by Q/E\nWSAD to rotate";
 
         yield return new WaitForSeconds(_startMessageDuration);
 
